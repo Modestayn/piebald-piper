@@ -85,18 +85,22 @@
         transform: translate3d(85px, 0, 0);
     }
 }
+
 .header__info {
     text-align: center;
     color: #fff;
     margin-top: 120px;
 }
+
 .info__title {
     text-transform: uppercase;
     font-size: 55px;
 }
+
 .info__subTitle {
     font-size: 22px;
 }
+
 .logo__img {
     width: 45px;
     object-fit: cover;
@@ -119,6 +123,7 @@
     text-decoration: none;
     font-size: 22px;
 }
+
 /* in development */
 /* .shop_link:hover, .shop__link:hover {
     transform: translateY(-8px) rotateY(15deg) rotateX(15deg);
@@ -129,6 +134,6 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    box-shadow: 0 6px 12px #360033 ;
+    box-shadow: 0 6px 12px #360033;
     transform: perspective(800px) rotateX(25deg) rotateY(25deg);
 }
