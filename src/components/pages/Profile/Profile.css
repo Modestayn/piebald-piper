@@ -1,0 +1,131 @@
+/* Общие стили для контейнера страницы */
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1200px; /* Создает более глубокую 3D-перспективу */
+    background: linear-gradient(135deg, #e0e0e0, #ffffff); /* Легкий градиентный фон */
+    position: relative;
+    overflow: hidden; /* Скрывает любые выходящие за границы элементы */
+}
+
+/* Стили для карточки */
+.card {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); /* Плавное преобразование */
+}
+
+/* Стили для внутреннего содержимого карточки */
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); /* Плавное преобразование */
+}
+
+/* Стили для передней стороны карточки */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Скроет заднюю сторону при развороте */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    box-sizing: border-box;
+    border-radius: 12px; /* Скругление углов */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Тень для лучшего эффекта */
+    background: linear-gradient(90deg, #360033 0%, #0B8793 100%);
+}
+
+/* Стили для задней стороны карточки */
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(90deg, #360033 0%, #0B8793 100%);
+}
+
+/* Стили для формы */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Скругление углов */
+    font-size: 16px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #b30000;
+    transform: translateY(-2px); /* Эффект при наведении */
+}
+
+/* Кнопка для переключения стороны карты */
+.toggle-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Эффект при наведении */
+}
+
+/* Эффект разворота карты при переключении состояния */
+.card.show-register .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #360033 0%, #0B8793 100%);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+input {
+    background-color: transparent;
+    color: #fff;
+}
