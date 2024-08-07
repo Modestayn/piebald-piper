@@ -2,7 +2,8 @@
 import './ProductCard.css';
 import PropTypes from 'prop-types';
 
-export const ProductCard = ({image, title, description}) => {
+export const ProductCard = (props) => {
+	const {image, title, description, price} = props.product;
 	return (
 		<div className='product-card'>
 			<div className='product-card-inner'>
@@ -12,6 +13,7 @@ export const ProductCard = ({image, title, description}) => {
 				<div className='product-card-back'>
 					<h3 className='product-card-title'>{title}</h3>
 					<p className='product-card-description'>{description}</p>
+					<p className='product-card-price'>{price}</p>
 					<button className='product-card-button'>Buy Now</button>
 				</div>
 			</div>
@@ -19,7 +21,11 @@ export const ProductCard = ({image, title, description}) => {
 	);
 };
 ProductCard.propTypes = {
-	image: PropTypes.string,
-	title: PropTypes.string,
-	description: PropTypes.string,
+	product: PropTypes.shape({
+		id: PropTypes.number,
+		title: PropTypes.string,
+		image: PropTypes.string,
+		price: PropTypes.number,
+		description: PropTypes.string,
+	}),
 };

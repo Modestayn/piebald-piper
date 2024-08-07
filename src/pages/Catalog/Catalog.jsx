@@ -9,12 +9,14 @@ const products = [
 		image: 'path/to/image1.jpg',
 		title: 'Product 1',
 		description: 'Description of Product 1',
+		price: 9.99,
 	},
 	{
 		id: 2,
 		image: 'path/to/image2.jpg',
 		title: 'Product 2',
 		description: 'Description of Product 2',
+		price: 9.99,
 	},
 ];
 
@@ -27,11 +29,7 @@ export const Catalog = () => {
 				<div className='catalog-grid'>
 					{products.map((product) => (
 						<div className='catalog-item' key={product.id}>
-							<ProductCard
-								image={product.image}
-								title={product.title}
-								description={product.description}
-							/>
+							<ProductCard product={product} />
 						</div>
 					))}
 				</div>
