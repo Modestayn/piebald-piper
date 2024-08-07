@@ -1,25 +1,23 @@
 import {Routes, Route, useLocation} from 'react-router-dom';
-import {Header} from './components/index.js';
-import {About} from './components/index.js';
-import {Cart} from './components/index.js';
-import {Catalog} from './components/index.js';
-import {Contact} from './components/index.js';
-import {Profile} from './components/index.js';
-import {Footer} from './components/index.js';
+import {Header, About, Cart, Catalog, Contact, Profile, Footer} from './components';
 
 function App() {
 	const location = useLocation();
 	const showFooter = ['/', '/About', '/Contact'].includes(location.pathname);
-
+	const routes = [
+		{path: '/', element: <Header />},
+		{path: '/about', element: <About />},
+		{path: '/contact', element: <Contact />},
+		{path: '/catalog', element: <Catalog />},
+		{path: '/profile', element: <Profile />},
+		{path: '/cart', element: <Cart />},
+	];
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<Header />} />
-				<Route path='/about' element={<About />} />
-				<Route path='/contact' element={<Contact />} />
-				<Route path='/catalog' element={<Catalog />} />
-				<Route path='/cart' element={<Cart />} />
-				<Route path='/profile' element={<Profile />} />
+				{routes.map((route) => {
+					return <Route key={route.path} path={route.path} element={route.element} />;
+				})}
 			</Routes>
 			{showFooter && <Footer />}
 		</>

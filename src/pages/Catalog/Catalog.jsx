@@ -1,6 +1,6 @@
 // src/components/Catalog/Catalog.jsx
-import {Header} from '../../src/components/index.js';
-import {ProductCard} from '../../src/components/index.js';
+import {Header} from '../../components/index.js';
+import {ProductCard} from '../../components/index.js';
 import './Catalog.css';
 
 const products = [

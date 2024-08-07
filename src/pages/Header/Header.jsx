@@ -9,6 +9,7 @@ const navItems = [
 	{path: '/contact', label: 'Contact'},
 	{path: '/catalog', label: 'Catalog'},
 ];
+
 export const Header = () => {
 	return (
 		<div>
