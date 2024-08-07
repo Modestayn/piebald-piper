@@ -1,6 +1,6 @@
 // About.jsx
-import {Header} from '../../index.js';
-import {Footer} from '../../index.js';
+import {Header} from '../../src/components/index.js';
+import {Footer} from '../../src/components/index.js';
 
 export const About = () => {
 	return (
