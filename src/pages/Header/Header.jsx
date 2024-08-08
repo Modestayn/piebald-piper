@@ -1,16 +1,21 @@
+// src/components/Header/Header.jsx
 import './Header.css';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons';
-import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import React from 'react';
+import { useCart } from '../../context/CartContext';
 
 const navItems = [
-	{path: '/', label: 'Home'},
-	{path: '/about', label: 'About'},
-	{path: '/contact', label: 'Contact'},
-	{path: '/catalog', label: 'Catalog'},
+	{ path: '/', label: 'Home' },
+	{ path: '/about', label: 'About' },
+	{ path: '/contact', label: 'Contact' },
+	{ path: '/catalog', label: 'Catalog' },
 ];
 
 export const Header = () => {
+	const { cartItems } = useCart();
+
 	return (
 		<div>
 			<div className='wrapper'>
@@ -55,13 +60,13 @@ export const Header = () => {
 						</ul>
 						<div className='nav__info'>
 							<div className='info__shop'>
-								<Link to='/profile' className='shop_link'>
-									<FontAwesomeIcon icon={faUser} style={{color: '#deddda'}} />
+								<Link to='/login' className='shop_link'>
+									<FontAwesomeIcon icon={faUser} style={{ color: '#deddda'}} />
 								</Link>
 								<Link to='/cart' className='shop__link'>
-									<FontAwesomeIcon icon={faCartShopping} style={{color: '#deddda'}} />
+									<FontAwesomeIcon icon={faCartShopping} style={{ color: '#deddda' }} />
 								</Link>
-								<span className='shop__score'></span>
+								<span className='shop__score'>{cartItems.length}</span>
 							</div>
 						</div>
 					</nav>

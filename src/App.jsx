@@ -1,23 +1,28 @@
-import {Routes, Route, useLocation} from 'react-router-dom';
-import {Header, About, Cart, Catalog, Contact, Profile, Footer} from './components';
+// src/App.jsx
+import React from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import {About, Cart, Catalog, Contact, Footer, RegisterForm, LoginForm, Header} from './components';
 
 function App() {
 	const location = useLocation();
-	const showFooter = ['/', '/About', '/Contact'].includes(location.pathname);
+	const showFooter = ['/', '/about', '/contact'].includes(location.pathname);
+
 	const routes = [
-		{path: '/', element: <Header />},
-		{path: '/about', element: <About />},
-		{path: '/contact', element: <Contact />},
-		{path: '/catalog', element: <Catalog />},
-		{path: '/profile', element: <Profile />},
-		{path: '/cart', element: <Cart />},
+		{ path: '/', element: <Header/> },
+		{ path: '/about', element: <About /> },
+		{ path: '/contact', element: <Contact /> },
+		{ path: '/catalog', element: <Catalog /> },
+		{ path: '/cart', element: <Cart /> },
+		{ path: '/login', element: <LoginForm /> },
+		{ path: '/register', element: <RegisterForm /> },
 	];
+
 	return (
 		<>
 			<Routes>
-				{routes.map((route) => {
-					return <Route key={route.path} path={route.path} element={route.element} />;
-				})}
+				{routes.map((route) => (
+					<Route key={route.path} path={route.path} element={route.element} />
+				))}
 			</Routes>
 			{showFooter && <Footer />}
 		</>

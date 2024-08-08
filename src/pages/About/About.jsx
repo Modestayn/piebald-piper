@@ -1,12 +1,14 @@
 // About.jsx
-import {Header} from '../../components/index.js';
-import {Footer} from '../../components/index.js';
+import {Header, Footer} from '../../components';
+import './About.css';
 
 export const About = () => {
 	return (
 		<>
 			<Header />
-			<h1 style={{textAlign: 'center'}}>About Us</h1>
+			<div className='about-page'>
+				<h1 style={{textAlign: 'center'}}>About Us</h1>
+			</div>
 			<Footer />
 		</>
 	);

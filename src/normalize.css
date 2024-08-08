@@ -18,6 +18,7 @@ html, body{
 	 background-color: #fff;
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 	font-style: 100%;
 	line-height: 1.5;
 	font-style: 14px;
@@ -60,3 +61,21 @@ footer {
     flex-shrink: 0;
 }
 
+@media screen and (max-width: 1024px) {
+	html, body {
+		height: auto;
+		overflow: visible;
+	}
+	.catalog-title {
+		margin-top: 0;
+	}
+}
+@media screen and (max-width: 550px) {
+	.nav {
+		flex-direction: column;
+		gap: 5px;
+	}
+	.footer {
+		width: 100%;
+	}
+}

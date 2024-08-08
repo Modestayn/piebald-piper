@@ -1,12 +1,13 @@
 // Contact.jsx
-import {Header} from '../../components/index.js';
-import {Footer} from '../../components/index.js';
-
+import {Header, Footer} from '../../components';
+import './Contact.css';
 export const Contact = () => {
 	return (
 		<>
 			<Header />
-			<h1 style={{textAlign: 'center'}}>Contact</h1>
+			<div className='contact-page'>
+				<h1 style={{textAlign: 'center'}}>Contact</h1>
+			</div>
 			<Footer />
 		</>
 	);

@@ -1,7 +1,9 @@
 // src/components/Catalog/Catalog.jsx
+import React from 'react';
 import {Header} from '../../components/index.js';
 import {ProductCard} from '../../components/index.js';
 import './Catalog.css';
+import {useCart} from '../../context/CartContext';
 
 const products = [
 	{
@@ -21,6 +23,8 @@ const products = [
 ];
 
 export const Catalog = () => {
+	const {cartItems} = useCart();
+
 	return (
 		<>
 			<Header />

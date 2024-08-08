@@ -4,5 +4,6 @@ export {About} from '../pages/About/About';
 export {Cart} from '../pages/Cart/Cart';
 export {Catalog} from '../pages/Catalog/Catalog';
 export {Contact} from '../pages/Contact/Contact';
-export {Profile} from '../pages/Profile/Profile';
+export {RegisterForm} from '../pages/Profile/RegisterForm';
+export {LoginForm} from '../pages/Profile/LoginForm';
 export {Footer} from './Footer/Footer';
